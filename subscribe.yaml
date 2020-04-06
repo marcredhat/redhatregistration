@@ -1,0 +1,12 @@
+
+
+- hosts: rhel81
+
+  tasks:
+  - name: Subscribe
+    become: yes
+    redhat_subscription:
+                state: present
+                username: {{ user }}  
+                password: {{ password }}
+                pool_ids: {{ pool }}
